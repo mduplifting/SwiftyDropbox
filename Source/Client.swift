@@ -110,7 +110,7 @@ func asciiEscape(s: String) -> String {
 public class BabelRequest<RType : JSONSerializer, EType : JSONSerializer> {
     let errorSerializer : EType
     let responseSerializer : RType
-    let request : Alamofire.Request
+    public let request : Alamofire.Request
     
     init(request: Alamofire.Request,
         responseSerializer: RType,
