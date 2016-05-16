@@ -394,6 +394,11 @@ public class DropboxAuthManager {
                     }
                 }
             )
+            web.onWillDismiss = {
+                if $0 {
+                    UIApplication.sharedApplication().openURL(NSURL(string: "db-\(self.appKey)://cancel/1")!)
+                }
+            }
             let navigationController = UINavigationController(rootViewController: web)
             controller.presentViewController(navigationController, animated: true, completion: nil)
         }
